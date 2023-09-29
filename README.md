@@ -1,2 +1,2 @@
 # Ipgr.github.io
-projectlnz
+Project lnz its a project for Lyzeum Naukova Zmina for IT
