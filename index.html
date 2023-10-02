@@ -116,38 +116,47 @@
     <p>&nbsp;</p>
 
     <script>
-        // JavaScript для создания рамки с хаотичными пятнами
-        const frameCanvas = document.createElement('canvas');
-        const frameCtx = frameCanvas.getContext('2d');
-        
-        frameCanvas.width = window.innerWidth;
-        frameCanvas.height = window.innerHeight;
-        
-        // Генерация хаотичных пятен внутри рамки
-        const numCircles = 200; // Количество пятен
-        for (let i = 0; i < numCircles; i++) {
-            const x = Math.random() * frameCanvas.width;
-            const y = Math.random() * frameCanvas.height;
-            const radius = Math.random() * 100 + 50; // Размеры пятен
-            const hue = Math.random() * 360; // Случайный оттенок, не синий или фиолетовый
-            const color = `hsl(${hue}, 50%, 50%)`;
-            
-            frameCtx.beginPath();
-            frameCtx.arc(x, y, radius, 0, Math.PI * 2);
-            frameCtx.fillStyle = color;
-            frameCtx.fill();
+        // JavaScript для создания хаотичных пятен на canvas
+        const canvas = document.getElementById('chaotic-pattern');
+        const ctx = canvas.getContext('2d');
+
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+
+        // Функция, чтобы проверить, является ли цвет синим или фиолетовым
+        function isBlueOrPurple(color) {
+            const blueThreshold = 200; // Порог для синего цвета
+            const redThreshold = 150; // Порог для красного цвета
+            const greenThreshold = 150; // Порог для зеленого цвета
+
+            const r = color[0];
+            const g = color[1];
+            const b = color[2];
+
+            return r > redThreshold && g > greenThreshold && b > blueThreshold;
         }
-        
-        // Рамка
-        const frameWidth = 20; // Ширина рамки
-        const frameColor = "#4B0082"; // Фиолетовый цвет рамки
-        
-        frameCtx.strokeStyle = frameColor;
-        frameCtx.lineWidth = frameWidth;
-        frameCtx.strokeRect(frameWidth / 2, frameWidth / 2, frameCanvas.width - frameWidth, frameCanvas.height - frameWidth);
-        
-        // Вставляем рамку с пятнами перед хаотичными пятнами
-        document.body.insertBefore(frameCanvas, document.getElementById('chaotic-pattern'));
+
+        function drawRandomCircles() {
+            const numCircles = 200; // Количество пятен
+            for (let i = 0; i < numCircles; i++) {
+                const x = Math.random() * canvas.width;
+                const y = Math.random() * canvas.height;
+                const radius = Math.random() * 100 + 50; // Размеры пятен
+                let hue, color;
+
+                do {
+                    hue = Math.random() * 360; // Случайный оттенок
+                    color = `hsl(${hue}, 50%, 50%)`;
+                } while (isBlueOrPurple(ctx.fillStyle));
+
+                ctx.beginPath();
+                ctx.arc(x, y, radius, 0, Math.PI * 2);
+                ctx.fillStyle = color;
+                ctx.fill();
+            }
+        }
+
+        drawRandomCircles();
     </script>
 </body>
 </html>
