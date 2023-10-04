@@ -1,7 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
+    
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Перейти на главную страницу</title>
+        <link rel="stylesheet" href="styles.css"> <!-- Подключаем ваш стилевой файл -->
+    </head>
+    <body>
+        <div class="arrow-left" onclick="goToHomePage()">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
@@ -10,7 +22,11 @@
 </head>
 
 <body>
-
+    <div class="arrow-left" onclick="goToHomePage()">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
     <header>
         <div id="particles"></div>
         <div class="info-text">
@@ -33,6 +49,19 @@
 
             </div>
         </div>
+        <div class="header">
+            <h1>Функції процесора</h1>
+        </div>
+
+        <div class="card">
+            <img src="сpu.png">
+            <div class="info">
+                <p>
+                    Через шини до ЦПУ (CPU) потрапляє інформація, яку потім обробляє ядро. Таким чином, основні функції процесора входять: обробка інформації за допомогою арифметичних і логічних операцій, керування роботою всього апаратного забезпечення комп'ютера.
+                </p>
+
+            </div>
+      </div>>      
     </section>
 
     <section id="features">
@@ -64,21 +93,15 @@
                     <i class='bx bxs-component'></i>
                     <h1>Ядра у процесорі</h1>
                     <p>
-                        дра у процесорі дозволяють виконувати декілька завдань одночасно, чим більше їх тим краще. Кожне ядро має тактову частоту — вимірювання того, наскільки швидко процесор робить обчислення.
+                        Ядра у процесорі дозволяють виконувати декілька завдань одночасно, чим більше їх тим краще. Кожне ядро має тактову частоту — вимірювання того, наскільки швидко процесор робить обчислення.
                     </p>
                 </div>
             </div>
-        </div>
     </section>
-
-    <button class="scroll-top" onclick="scrollToTop()">
-        <i class='bx bxs-up-arrow'></i>
-    </button>
-
-
-
+    
     <script src="https://cdnjs.cloudflare.com/ajax/libs/particles.js/2.0.0/particles.min.js"></script>
     <script src="script2.js"></script>
 </body>
 
+  
 </html>
