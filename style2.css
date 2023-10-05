@@ -1,3 +1,4 @@
+
 @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600;700&family=Ubuntu:wght@300;400;500;700&display=swap');
 
 html{
@@ -35,12 +36,12 @@ header .info-text{
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 0.8rem;
+    gap: 10rem;
     height: 100vh;
 }
 
 header .info-text h1{
-    font-size: 5rem;
+    font-size: 7rem;
     font-weight: 500;
     font-family: 'Ubuntu';
 }
@@ -234,4 +235,28 @@ header .info-text .scroll::before{
         max-height: 150px;
     }
 
+}
+/* Устанавливаем общие стили для кнопки */
+.styled-button {
+    display: inline-block;
+    padding: 20px 40px; /* Увеличиваем размер кнопки */
+    background-color: #2b2f4b;
+    color: white;
+    text-decoration: none;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    border: 2px solid black;
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+    position: fixed;
+    bottom: 20px; /* Помещаем кнопку внизу страницы с отступом */
+    right: 20px; /* Помещаем кнопку в правую часть экрана с отступом */
+}
+
+/* Стиль при наведении курсора */
+.styled-button:hover {
+    background-color: white;
+    color: #2b2f4b;
+    border-color: #2b2f4b;
 }
