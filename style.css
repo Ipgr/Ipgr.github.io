@@ -16,6 +16,7 @@ body
 	pointer-events: none;
 	z-index: 10000;
 }
+/* a css ya yego boyus*/
 .open .layer
 {
 	position: absolute;
@@ -148,6 +149,7 @@ section
 		opacity: 1;
 	}
 }
+/* pozhalusta hwatit etogo muchenia*/
 .bannerText a
 {
 	opacity: 0;
